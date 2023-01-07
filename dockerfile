@@ -20,6 +20,8 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
 #https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 #Basic: All files required to run OCI, OCCI, and JDBC-OCI applications (60,704,657 bytes) (cksum - 41267059)
 #SDK: Additional header files and an example makefile for developing Oracle applications with Instant Client (643,089 bytes) (cksum - 3927039586)
